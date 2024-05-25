@@ -1,0 +1,77 @@
+{% extends 'base.html' %} {% load static %}
+
+<!-- CSS -->
+{% block css %}
+  <link rel="stylesheet" href="{% static 'concept1/css/spec.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
+{% endblock %}
+
+<!-- JS -->
+{% block js %}
+  <script src="" defer></script>
+{% endblock %}
+
+<!-- Title -->
+{% block title %}
+  Spec
+{% endblock %}
+
+<!-- Main Content -->
+{% block content %}
+  <h1 class="">{{ spec.ucase.use_case }}</h1>
+  <div class="spec">
+    <h3 class="">Specifications</h3>
+    <table class="">
+      <tr>
+        <th>Actor</th>
+        <td>{{ spec.ucase.aktor.nama_aktor }}</td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <a href="/usecasespectosequence/home/{{ spec.ucase.aktor.project.id }}/usecase/{{ spec.ucase.id }}/form" class="btn btn-warning"><i class="fas fa-eye"></i> View</a>
+        <td>
+          {% if spec.goal %}
+            {{ spec.goal }}
+          {% else %}
+            -
+          {% endif %}
+        </td>
+      </tr>
+      <tr>
+        <th>Precondition</th>
+        <td>
+          {% if spec.awal %}
+            {{ spec.awal }}
+          {% else %}
+            -
+          {% endif %}
+        </td>
+      </tr>
+      <tr>
+        <th>Postcondition</th>
+        <td>
+          {% if spec.akhir %}
+            {{ spec.akhir }}
+          {% else %}
+            -
+          {% endif %}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  {% for key, val in flows.items %}
+    {% if val %}
+      <div class="scenario">
+        <h3 class="">{{ key }} Scenario</h3>
+        <table class="">
+          {% for v in val %}
+            <tr class="">
+              <td>{{ v }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endblock %}

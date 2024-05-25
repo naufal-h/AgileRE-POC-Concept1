@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% load static %}
+
+<!-- CSS -->
+{% block css %}
+  <link rel="stylesheet" href="{% static 'concept1/css/input_diagram.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
+{% endblock %}
+
+<!-- JS -->
+{% block js %}
+  <script src="" defer></script>
+{% endblock %}
+
+<!-- Title -->
+{% block title %}
+  Input Diagram
+{% endblock %}
+
+<!-- Main Content -->
+{% block content %}
+  <!-- Content -->
+  <h1>Input Project</h1>
+
+  <form action="{% url 'ucase:input_diagram' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_div }}
+    <button type="submit"><p>Submit</p></button>
+  </form>
+{% endblock %}

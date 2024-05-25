@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- CSS -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'concept1/css/input_spec.css' %}">
+{% endblock css %}
+
+<!-- JS -->
+{% block js %}
+    <script src="" defer></script>
+{% endblock js %}
+
+<!-- Title -->
+{% block title %}
+Input Spec
+{% endblock title %}
+
+<!-- Main Content -->
+{% block content %}
+<div class="headline">
+    <h1>{{ ucase.use_case }}</h1>
+    <h5>Actor : {{ ucase.aktor.nama_aktor }}</h5>
+  </div>
+
+  <form action="{% url 'ucase:input_spec' ucase.id %}" method="POST">
+    {% csrf_token %} 
+    {{ form.as_div }} 
+    <button type="submit"><p>Submit</p></button>
+  </form>
+</div>
+{% endblock content %}

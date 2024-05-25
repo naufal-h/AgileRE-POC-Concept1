@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- CSS -->
+{% block css %}
+  <link rel="stylesheet" href="{% static 'concept1/css/landing.css' %}" />
+{% endblock %}
+
+<!-- JS -->
+{% block js %}
+  <script src="" defer></script>
+{% endblock %}
+
+<!-- Title -->
+{% block title %}
+  Landing
+{% endblock %}
+
+<!-- Navbar -->
+
+<!-- Main Content -->
+{% block content %}
+  <div class="content">
+    <img src="{% static 'concept1/Images/Asset 1 1.png' %}" alt="" />
+    <div class="content__item">
+      <h1>Use Case <br />Generator</h1>
+      <div class="item__detail">
+        <p>Generate your Use Case Diagram and Use Case Specification by telling your system plan. No need to make complicated diagram by yourself, We will make it for you!</p>
+        <a href="{% url 'home' %}" class="primary-btn"><p>Get Started</p></a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

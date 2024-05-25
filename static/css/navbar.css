@@ -1,0 +1,40 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #07143f;
+  padding: 1.4rem 5.5rem;
+  color: #fff;
+}
+
+.navbar img {
+  width: 140px;
+}
+
+.navbar__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 16%;
+}
+
+.navbar__item p {
+  font-size: 20px;
+}
+
+.logout {
+  border: 1px solid #fff;
+  background-color: #07143f;
+  border-radius: 5rem;
+  padding: 0.3rem 1.2rem;
+  text-align: center;
+  display: none;
+}

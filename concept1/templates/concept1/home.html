@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% load static %}
+
+<!-- CSS -->
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
+  <link rel="stylesheet" href="{% static 'concept1/css/home.css' %}" />
+{% endblock %}
+
+<!-- JS -->
+{% block js %}
+  <script src="" defer></script>
+{% endblock %}
+
+<!-- Title -->
+{% block title %}
+  Home
+{% endblock %}
+
+<!-- Main Content -->
+{% block content %}
+  <div class="title-wrapper">
+    <h1>List Project</h1>
+    <a href="{% url 'ucase:input_diagram' %}" class="primary-btn"><span class="material-icons">add</span>Add Use Case</a>
+  </div>
+  <div class="items">
+    {% for project in projects %}
+      <a href="{% url 'ucase:diagram' project.id %}" class="item">
+        <div class="item__head">
+          <h4>{{ project.judul_project }}</h4>
+          <p>{{ project.desc_singkat }}</p>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+  {% comment %} <div class="pagination">
+    <a href="" class="material-icons">arrow_back_ios_new</a>
+    <a href="" class="active">1</a>
+    <a href="" class="">2</a>
+    <a href="" class="">3</a>
+    <a href="" class="material-icons">arrow_forward_ios</a>
+  </div> {% endcomment %}
+{% endblock %}

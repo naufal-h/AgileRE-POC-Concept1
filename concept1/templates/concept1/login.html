@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- CSS -->
+{% block css %}
+    <link rel="stylesheet" href="{% static 'concept1/css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+{% endblock css %}
+
+<!-- JS -->
+{% block js %}
+    <script src="" defer></script>
+{% endblock js %}
+
+<!-- Title -->
+{% block title %}
+Login
+{% endblock title %}
+
+<!-- Main Content -->
+{% block content %}
+
+<!-- Content -->
+<h1>Login</h1>
+<div class="">
+  {% if messages %}
+      {% for message in messages %}
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              {{ message }}
+          </div>
+      {% endfor %}
+  {% endif %}
+</div> 
+<form action="" method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" id="id_email" class="form-input" name="email" />
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="id_password" name="password">
+
+  </div>
+  <button type="submit"><p>Login</p></button>
+  <p id="register-link">
+    Don't have an account yet? <a href="{% url 'register' %}">Register</a>
+  </p>
+</form>
+{% endblock content %}

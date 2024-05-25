@@ -1,0 +1,28 @@
+.root {
+  align-items: center;
+}
+
+form {
+  width: 55%;
+}
+
+form button {
+  padding-left: 3.6rem;
+  padding-right: 3.6rem;
+  align-self: center;
+  margin-top: 1.4rem;
+}
+
+form > p {
+  margin-top: 1rem;
+  align-self: center;
+}
+
+.root a {
+  color: #4a99f3;
+  font-weight: 600;
+}
+
+.root a:hover {
+  text-shadow: 0 0 0.6rem #4a99f3;
+}

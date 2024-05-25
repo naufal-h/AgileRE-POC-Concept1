@@ -1,0 +1,116 @@
+.root {
+  align-items: center;
+}
+
+.root h1 {
+  text-transform: capitalize;
+}
+
+.spec,
+.scenario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid white;
+}
+
+th,
+td {
+  padding: 1rem;
+  border: 1px solid white;
+}
+
+th {
+  width: 28%;
+}
+
+/* header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-left img {
+    height: 50px;
+    margin-left: 20px;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .header-right img {
+    height: 30px;
+    margin-right: 10px;
+  }
+  .header-right span {
+    font-size: 1rem;
+  }
+  
+  .scenario-title {
+    color: white;
+    text-align: center;
+  }
+  .isi-scenario {
+    color: white;
+  }
+  
+  .specifications {
+    color: white;
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .specifications th,
+  .specifications td {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .scenario-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .scenario-table th,
+  .scenario-table td {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .scenario-table th {
+    text-align: center;
+    background-color: #d9d9d9;
+  }
+  
+  button {
+    padding: 1rem 3.6rem;
+    color: white;
+    background-color: transparent;
+    border: 1px white solid;
+    border-radius: 0.2rem;
+    font-weight: bold;
+  }
+  
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  } */

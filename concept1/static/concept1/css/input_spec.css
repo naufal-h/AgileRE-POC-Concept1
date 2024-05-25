@@ -1,0 +1,14 @@
+.headline {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h1 {
+    text-transform: capitalize;
+  }
+  
+  form button {
+    margin-top: 1.2rem;
+    align-self: flex-end;
+  }
+  

@@ -1,0 +1,36 @@
+<div class="modal fade" data-backdrop="false" id="modal-{{proyek.project_id}}"" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+          <button type="button" class="btn btn-warning" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <form method="post" action="/usecasespectosequence/ganti_proyek/{{proyek.project_id}}">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Project Name:</label>
+              <input required name="project_name" type="text" class="form-control" id="recipient-name">{{ form.project_name }}
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Description:</label>
+              <input required name="project_desc" type="text" class="form-control" id="recipient-name">{{ form.project_desc }}
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" value="" class="btn btn-primary">Add</button>
+        </div>
+          </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $('#myModal').on('hidden.bs.modal', function () {
+        location.reload();});     // reloads the current page
+ </script>

@@ -1,0 +1,87 @@
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.item {
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 1.5rem;
+  border: 1px solid white;
+  border-radius: 1.2rem;
+  background-color: #00002573;
+}
+
+.item:hover {
+  box-shadow: 0 0.7rem 16px #00002577;
+  transform: translate(0, -0.6rem);
+}
+
+.item__head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  width: 100%;  
+}
+
+.item__head p {
+  font-size: 0.9rem;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.pagination > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination > *:not(:last-child, :first-child) {
+  height: 2.2rem;
+  min-width: 2.2rem;
+  border: 1px solid white;
+  border-radius: 2rem;
+}
+
+.pagination > *:last-child,
+.pagination > *:first-child {
+  color: #d3d3d3;
+}
+
+.pagination > *:last-child:hover,
+.pagination > *:first-child:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.pagination > *:hover {
+  background-color: #ffffff;
+  color: #000025;
+}
+
+.active {
+  color: #000025;
+  background-color: white;
+}
+
+.active:hover {
+  color: #000025;
+  background-color: white;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SEGA &mdash; Kelompok 1</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600&amp;subset=latin-ext" rel="stylesheet" />
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'img/SEGA_ICON_WEB.png' %}" />
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="{% static 'vendors/css/vendor.bundle.base.css' %}" />
+    <link rel="stylesheet" href="../node_modules/jqvmap/dist/jqvmap.min.css" />
+    <link rel="stylesheet" href="../node_modules/summernote/dist/summernote-bs4.css" />
+    <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css" />
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/components.css' %}" />
+  </head>
+
+  <body>
+    <div class="site" id="page">
+      <!-- Options headline effects: .rotate | .slide | .zoom | .push | .clip -->
+      <section class="hero-section">
+        <div class="hero-section__wrap">
+          <div class="hero-section__option">
+            <a href="/usecasespectosequence/home">
+              <video width="1600" autoplay loop>
+                <source src="{% static 'img/splash.mp4' %}" type="video/mp4" />
+              </video>
+            </a>
+            {% comment %} <source src="{% static 'images/splashppl.mp4' %} " alt="Hero section image" /> {% endcomment %}
+          </div>
+          <!-- .hero-section__option -->
+        </div>
+      </section>
+    </div>
+
+    {% comment %} <div class="button-group">
+      <a href="index-color.html" class="btn btn-outline-success button-sm">Color</a>
+      <a href="index-slider.html" class="btn btn-outline-success button-sm">Slider</a>
+      <a href="index-video.html" class="btn btn-outline-success button-sm">Video Background</a>
+    </div> {% endcomment %}
+
+    <!-- JS -->
+  </body>
+</html>

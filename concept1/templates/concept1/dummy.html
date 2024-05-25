@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SpaCy Results</title>
+</head>
+<body>
+    <h1>Named Entities</h1>
+    <ul>
+        {% for entity in entities %}
+            <li>{{ entity.0 }} - {{ entity.1 }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

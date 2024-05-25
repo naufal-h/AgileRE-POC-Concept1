@@ -1,0 +1,38 @@
+.root {
+    align-items: center;
+  }
+  
+  .root img {
+    border-radius: 2rem;
+    width: 60%;
+  }
+  
+  .spec {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+  }
+  
+  .spec__item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  .spec__item > * {
+    width: 30%;
+  }
+  
+  .spec__item a {
+    font-weight: 700;
+  }
+  
+  .primary-btn {
+    border: 1px solid white;
+  }
+  
