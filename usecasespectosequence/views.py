@@ -32,6 +32,7 @@ def form_tambah_usecasespec(request, project_id, usecase_id):
             'project_id':project_id,
             'usecase_name':tasks.use_case,
             'actor':tasks.aktor,
+            'desc':tasks1.deskripsi,
             'postcon':tasks1.awal,
             'postcon_object':tasks1.awal,
             'precon':tasks1.akhir,
