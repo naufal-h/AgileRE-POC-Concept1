@@ -1,0 +1,70 @@
+{% extends "basemain.html" %} {% load static %} {% block style %}
+<link rel="stylesheet" href="{% static 'concept1/css/dashboard.css' %}" />
+{% endblock %} {% block title %} Dashboard {% endblock %} {% block content %}
+
+{% if user.is_authenticated %}
+<p class="welcome-user">Welcome {{ request.user.username }}!</p>
+{% endif %}
+<div class="Project">
+  <div class="title">
+    <h3>Project</h3>
+  </div>
+  <div class="Project konten">
+    <div class="Project--head">
+      <h5>Monitor Project</h5>
+      <div class="Project--action--menu">
+        <div class="Project--search">
+          {% comment %}
+          <div class="search-container">
+            <a href="#"><img alt="#" class="search-icon"
+                src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png" /></a>
+            <input type="text" id="search-bar" placeholder="Search.." />
+          </div>
+          {% endcomment %}
+        </div>
+        <div class="Project--add">
+          <a href="{% url 'ucase:input_diagram' %}">
+            <span><img alt="#" src={% static 'icons/plus.svg' %}></span>
+            <span>Add</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="Project--table">
+      <table>
+        <thead>
+          <tr style="border-radius: 50%">
+            <th>No</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <!-- batas awal -->
+
+        
+        
+        <tbody>
+          {% for project in projects %}
+          <tr>
+              <td>{{forloop.counter}}</td>
+              <td>{{project.judul_project}}</td>
+              <td>{{ project.desc_singkat }}</td>
+              <td>
+                <a href="{% url 'ucase:diagram' project.id %}">
+                  <img alt="view" src={% static 'admin/icons/view-button.svg' %}>
+                </a>
+              </td>
+            </tr>
+          {%endfor%}
+          
+          
+        </tbody>
+        
+        <!-- Batas akhir -->
+      </table>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

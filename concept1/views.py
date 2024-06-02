@@ -18,7 +18,7 @@ def HomePage(request):
     for project in projects:
         project.desc_singkat = ' '.join(project.deskripsi_project.split()[:22]) + '...'
     
-    return render (request,'concept1/home.html', context)
+    return render (request,'concept1/client-dashboard.html', context)
 
 def register(request):
     
@@ -36,7 +36,7 @@ def register(request):
     else:
         form = RegistrationForm()
 
-    return render(request, 'concept1/register.html', {'form': form})
+    return render(request, 'concept1/regist.html', {'form': form})
 
 def user_login(request):
     if request.method == 'POST':
@@ -59,7 +59,7 @@ def user_login(request):
             messages.error(request, "Invalid username or password. Please try again.")
             return redirect('login')
 
-    return render(request, 'concept1/login.html')
+    return render(request, 'concept1/signin.html')
 
 def landingpage (request):
     return render(request, 'concept1/landing.html')

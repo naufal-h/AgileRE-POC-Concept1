@@ -21,7 +21,7 @@ html {
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
-  background: linear-gradient(to right top, #552e4f, 10%, #071544);
+  background: linear-gradient(to right top, #27374d, 10%, #27374d);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -30,12 +30,12 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: linear-gradient(to right top, #552e4f, 6%, #071544);
+  background: linear-gradient(to right top, #27374d, 6%, #27374d);
 }
 
 body {
   min-height: 100%;
-  background: linear-gradient(to right top, #552e4f, 10%, #071544);
+  background: linear-gradient(to right top, #27374d, 10%, #27374d);
   background-attachment: fixed;
 }
 

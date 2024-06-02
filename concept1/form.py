@@ -25,6 +25,7 @@ class RegistrationForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super(RegistrationForm, self).__init__(*args, **kwargs)
         self.fields['username'].widget.attrs.update({'placeholder': 'Minimum 8 characters'})
+        self.fields['email'].widget.attrs.update({'placeholder': 'Enter your email'})
         self.fields['password1'].widget.attrs.update({'placeholder': 'Minimum 8 characters'})
         self.fields['password2'].widget.attrs.update({'placeholder': 'Repeat your password', 'autocomplete': 'new-password'})
 

@@ -23,14 +23,14 @@
     <title>
       {% block title %}
 
-      {% endblock %}| Ucase
+      {% endblock %}| Software Artifacts Generator
     </title>
   </head>
   <body>
     <!-- Navbar -->
     {% if request.user.username %}
       <nav class="navbar" id="navbar">
-        <a href="{% url 'home' %}"><img src="{% static 'concept1/Images/logo.png' %}" alt="Logo Ugene" /></a>
+        <a href="{% url 'home' %}">Software Artifacts Generator</a>
         <div class="menu">
           <div class="navbar__item">
             <p>{{ request.user.username }}</p>
@@ -39,11 +39,10 @@
           <a href="{% url 'logout' %}" class="logout">Logout</a>
         </div>
       </nav>
-    {% elif not request.path == '/register/' and not request.path == '/login/' %}
+    {% else %}
       <nav class="navbar" id="nav">
-        <a href=""><img src="{% static 'concept1/Images/logo.png' %}" alt="Logo Ucase" /></a>
+        <a class="title-bar" href="">Software Artifacts Generator</a>
         <ul>
-          <li>About</li>
           <li>
             <a href="{% url 'login' %}">Login</a>
           </li>

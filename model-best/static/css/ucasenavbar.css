@@ -5,9 +5,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #07143f;
+  background-color: #0a2647;
   padding: 1.4rem 5.5rem;
   color: #fff;
+}
+
+.title-bar {
+  font-size: 1.5rem !important;
 }
 
 .navbar img {
@@ -37,4 +41,18 @@
   padding: 0.3rem 1.2rem;
   text-align: center;
   display: none;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+li {
+  cursor: pointer;
+}
+
+li:hover a {
+  color: #898888;
 }

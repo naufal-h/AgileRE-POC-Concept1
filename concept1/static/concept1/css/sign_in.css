@@ -1,0 +1,54 @@
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+
+html::-webkit-scrollbar {
+  display: none;
+}
+html {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body {
+  font-family: "Poppins";
+}
+
+header {
+  background-color: #17193d;
+  padding: 10px 15%;
+  height: 6rem;
+}
+
+header img {
+  height: 70px;
+  width: 70px;
+  border-radius: 35px;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+  margin-right: 2.25rem;
+  font-size: 25px;
+}
+
+header a:hover {
+  color: #f29f05;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+}
+
+.profile {
+  margin-left: 2.2;
+}
+
+.pfp {
+  height: 40px;
+  width: 40px;
+  border-radius: 25px;
+}
