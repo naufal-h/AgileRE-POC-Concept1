@@ -1,55 +1,168 @@
-{% extends 'base_signin.html' %} {% block content %}
-  {% if message %}
-    <script>
-      alert('{{ message }}')
-    </script>
-  {% endif %}
-
-  <div class="login-container">
-    <form action="" method="POST">
-      {% csrf_token %}
-      <h2 class="sign">Sign in</h2>
-      <div class="form-content">
-        <div class="form-group mb-2">
-          <input type="email" id="id_email" placeholder="Email" class="form rounded" name="email" required />
-        </div>
-        <div class="form-group mb-2">
-          <div class="input-with-icon">
-            <input type="password" class="form rounded" id="id_password" name="password" placeholder="Password" required />
-
-            <span class="eye" onclick="showp()">
-              <i id="hide1" class="fa fa-light fa-eye"></i>
-              <i id="hide2" class="fa fa-sharp fa-light fa-eye-slash"></i>
-            </span>
-          </div>
-        </div>
-        <button class="login-button" type="submit">Sign In</button>
-        <div class="dontHave">
-          <p>Don't have an account?</p>
-          <div class="signup">
-            <a href="{% url 'register' %}">Sign up</a>
-          </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Software Artifact Generator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      .container {
+        display: flex;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        max-width: 900px;
+        width: 100%;
+        flex-direction: row;
+      }
+      
+      .login-section {
+        padding: 40px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .login-section h1 {
+        margin-bottom: 20px;
+        font-size: 1.5em;
+      }
+      
+      .login-section form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .login-section form input {
+        width: 80%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      
+      .login-section form button {
+        width: 80%;
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1em;
+      }
+      
+      .login-section form button:hover {
+        background-color: #555;
+      }
+      
+      .login-section .additional-links {
+        margin-top: 10px;
+        font-size: 0.9em;
+        text-align: center;
+      }
+      
+      .login-section .additional-links a {
+        color: #333;
+        text-decoration: none;
+      }
+      
+      .login-section .additional-links a:hover {
+        text-decoration: underline;
+      }
+      
+      .info-section {
+        width: 50%;
+        background-color: #f0f0f0;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .info-section p {
+        margin: 20px 0;
+        font-size: 1.1em;
+      }
+      
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+      
+        .login-section,
+        .info-section {
+          width: 100%;
+          padding: 20px;
+        }
+      
+        .login-section form input,
+        .login-section form button {
+          width: 100%;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .login-section form input,
+        .login-section form button {
+          width: 100%;
+          padding: 8px;
+          font-size: 0.9em;
+        }
+      
+        .login-section h1,
+        .info-section h1 {
+          font-size: 1.2em;
+        }
+      
+        .info-section p {
+          font-size: 1em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="login-section">
+        <h1>Login to your account</h1>
+        <form action="" method="POST">
+          {% csrf_token %}
+          <input name="email" type="email" placeholder="Enter your email" required />
+          <input name="password" type="password" placeholder="Password" required />
+          {% if messages %}
+            {% for message in messages %}
+              <p style="color: red">{{ message }}</p>
+            {% endfor %}
+          {% endif %}
+          <button type="submit">Log in</button>
+        </form>
+        <div class="additional-links">
+          <br />
+          Don't have an account yet? <a href="{% url 'register' %}">Register</a>
         </div>
       </div>
-    </form>
-  </div>
-{% endblock %}
-
-{% block script %}
-  <script>
-    function showp() {
-      var x = document.getElementById('password')
-      var y = document.getElementById('hide1')
-      var z = document.getElementById('hide2')
-      if (x.type === 'password') {
-        x.type = 'text'
-        y.style.display = 'none'
-        z.style.display = 'block'
-      } else {
-        x.type = 'password'
-        y.style.display = 'block'
-        z.style.display = 'none'
-      }
-    }
-  </script>
-{% endblock %}
+      <div class="info-section">
+        <h1>I ❤️ SAG</h1>
+        <p>Enter your email and password to access your SAG account. You are one step closer to boosting your software productivity.</p>
+      </div>
+    </div>
+  </body>
+</html>

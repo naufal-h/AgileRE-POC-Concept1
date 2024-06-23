@@ -1,81 +1,176 @@
-{% extends "base_regist.html" %} {% block content %}
-<div class="signup-container">
-  <form action="" method="POST">
-    {% csrf_token %}
-    <h2 class="sign">Sign up</h2>
-    <div class="form-group mb-2">
-      <label class="form-label" for="name">*Username</label>
-      <div class="form-content mb-2">
-        <div class="input-with-icon">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - Software Artifact Generator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      .container {
+        display: flex;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        max-width: 900px;
+        width: 100%;
+        flex-direction: row;
+      }
+      
+      .signup-section {
+        padding: 40px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .signup-section h1 {
+        margin-bottom: 20px;
+        font-size: 1.5em;
+      }
+      
+      .signup-section form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .signup-section form input {
+        width: 80%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      
+      .signup-section form button {
+        width: 80%;
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1em;
+      }
+      
+      .signup-section form button:hover {
+        background-color: #555;
+      }
+      
+      .signup-section .additional-links {
+        margin-top: 10px;
+        font-size: 0.9em;
+        text-align: center;
+      }
+      
+      .signup-section .additional-links a {
+        color: #333;
+        text-decoration: none;
+      }
+      
+      .signup-section .additional-links a:hover {
+        text-decoration: underline;
+      }
+      
+      .info-section {
+        width: 50%;
+        background-color: #f0f0f0;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .info-section p {
+        margin: 20px 0;
+        font-size: 1.1em;
+      }
+      
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+      
+        .signup-section,
+        .info-section {
+          width: 100%;
+          padding: 20px;
+        }
+      
+        .signup-section form input,
+        .signup-section form button {
+          width: 100%;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .signup-section form input,
+        .signup-section form button {
+          width: 100%;
+          padding: 8px;
+          font-size: 0.9em;
+        }
+      
+        .signup-section h1,
+        .info-section h1 {
+          font-size: 1.2em;
+        }
+      
+        .info-section p {
+          font-size: 1em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="signup-section">
+        <h1>Ceate new account</h1>
+        <form action="" method="POST">
+          {% csrf_token %}
           {{ form.username }}
-                {% if form.username.errors %}
-        <div class="alert alert-danger">{{ form.username.errors }}</div>
-      {% endif %}
-        </div>
-      </div>
-    </div>
-    <div class="form-group mb-2">
-      <label class="form-label" for="email"><span>*Email<span></label>
-      <div class="form-content mb-2">
-        <div class="input-with-icon">
+          {% if form.username.errors %}
+            <div class="alert alert-danger">{{ form.username.errors }}</div>
+          {% endif %}
           {{ form.email }}
-                {% if form.email.errors %}
-        <div class="alert alert-danger">{{ form.email.errors }}</div>
-      {% endif %}
-        </div>
-      </div>
-    </div>
-    <div class="form-group mb-2">
-      <label class="form-label" for="password"><span>*Password<span></label>
-      <div class="form-content mb-2">
-        <div class="input-with-icon">
+          {% if form.email.errors %}
+            <div class="alert alert-danger">{{ form.email.errors }}</div>
+          {% endif %}
           {{ form.password1 }}
-                {% if form.password1.errors %}
-        <div class="alert alert-danger">{{ form.password1.errors }}</div>
-      {% endif %}
-          <span class="eye" onclick="showp()">
-            <i id="hide1" class="fa fa-light fa-eye"></i>
-            <i id="hide2" class="fa fa-sharp fa-light fa-eye-slash"></i>
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="form-group mb-2">
-      <label class="form-label" for="password"><span>*Confirm Password<span></label>
-      <div class="form-content mb-2">
-        <div class="input-with-icon">
+          {% if form.password1.errors %}
+            <div class="alert alert-danger">{{ form.password1.errors }}</div>
+          {% endif %}
           {{ form.password2 }}
-                {% if form.password2.errors %}
-        <div class="alert alert-danger">{{ form.password2.errors }}</div>
-      {% endif %}
+          {% if form.password2.errors %}
+            <div class="alert alert-danger">{{ form.password2.errors }}</div>
+          {% endif %}
+          <button type="submit">Sign Up</button>
+        </form>
+        <div class="additional-links">
+          Already member? <a href="{% url 'login' %}">Sign in</a>
         </div>
       </div>
-    </div>
-    <button class="sign-up-button" type="submit"> Sign Up</button>
-    <div class="dontHave">
-      <p>Already have acoount?</p>
-      <div class="signup"><a href="{% url 'register' %}">Sign in</a>
+      <div class="info-section">
+        <h1>I ❤️ SAG</h1>
+        <p>Enter your email and password to create your SAG account. You are one step closer to boosting your software productivity.</p>
       </div>
     </div>
-  </form>
-</div>
-{%endblock%}
-
-{% block script %}
-<script>
-  function showp() {
-    var x = document.getElementById("password");
-    var y = document.getElementById("hide1");
-    var z = document.getElementById("hide2");
-    if (x.type === "password") {
-      x.type = "text";
-      y.style.display = "none";
-      z.style.display = "block";
-    } else {
-      x.type = "password";
-      y.style.display = "block";
-      z.style.display = "none";
-    }
-  }
-</script>
-{% endblock %}
+  </body>
+</html>
