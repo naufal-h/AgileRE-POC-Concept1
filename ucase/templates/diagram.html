@@ -1,40 +1,38 @@
-{% extends "base.html" %}
+{% extends 'ucasebase.html' %}
 {% load static %}
 
 <!-- CSS -->
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-<link rel="stylesheet" href="{% static 'concept1/css/diagram.css' %}">
-{% endblock css %}
+  <link rel="stylesheet" href="{% static 'css/ucasenavbar.css' %}" />
+  <link rel="stylesheet" href="{% static 'concept1/css/diagram.css' %}" />
+{% endblock %}
 
 <!-- JS -->
 {% block js %}
-    <script src="" defer></script>
-{% endblock js %}
+  <script src="" defer></script>
+{% endblock %}
 
 <!-- Title -->
 {% block title %}
-diagram
-{% endblock title %}
+  diagram
+{% endblock %}
 
 <!-- Main Content -->
 {% block content %}
-<h1>{{ title }}</h1>
-      <div class="diagram">
-        {% autoescape off %}
-          {{ diagram }}
-        {% endautoescape %}
-      </div>
+  <h1>{{ title }}</h1>
+  <div class="diagram">
+    {% autoescape off %}
+      {{ diagram }}
+    {% endautoescape %}
+  </div>
 
-      <div class="spec">
-        <h3>Specification List</h3>
+  <div class="spec">
+    <h3>Specification List</h3>
 
-        <div class="spec__item">
-          {% for ucase in ucases %}
-            <a href="{% url 'ucase:input_spec' ucase.id %}" class="primary-btn"
-              >{{ ucase }}</a
-            >
-          {% endfor %}
-        </div>
-      </div>
-{% endblock content %}
+    <div class="spec__item">
+      {% for ucase in ucases %}
+        <a href="{% url 'ucase:input_spec' ucase.id %}" class="primary-btn">{{ ucase }}</a>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
